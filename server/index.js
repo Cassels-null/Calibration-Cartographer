@@ -13,4 +13,6 @@ app.get('/', (req, res) => res.send('Hello World!'));
 console.log(scribe);
 console.log(scribe);
 
-app.post('/', scribe.record);
+app.post('/make', scribe.record);
+
+app.post('/score', scribe.record);

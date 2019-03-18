@@ -23,8 +23,11 @@ var scribe = {
         var inst = new Prediction(req.body);
         inst.save(function (err, inst) {
             if (err) return console.error(err);
-            console.log(inst.claim);
-        });;
+            res.end();
+        });
+    },
+    score: function(req, res){
+        Prediction.findOneAndUpdate({tag: req.body.tag}, {eval: req.body.eval}, (res)=>{res.end();})
     }
 };
 
