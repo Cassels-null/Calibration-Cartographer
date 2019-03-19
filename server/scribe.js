@@ -28,6 +28,9 @@ var scribe = {
     },
     score: function(req, res){
         Prediction.findOneAndUpdate({tag: req.body.tag}, {eval: req.body.eval}, (res)=>{res.end();})
+    },
+    read: function(req,res){
+        Prediction.find((err, result)=>{res.send(err || result)})
     }
 };
 
