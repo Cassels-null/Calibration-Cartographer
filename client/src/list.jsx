@@ -18,10 +18,15 @@ class List extends React.Component {
     render(){
         // return (<div>{this.props.predictions}</div>)
         return(this.props.predictions.map((item, index)=>{return <div>
-            <span>{item.claim}____{item.confidence}____{item.eval}</span>
-
-            <input type="button" id={index} value="true" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
-            <input type="button" id={index} value="false" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
+            
+            {/* <br/> */}
+            <input className="listBit" type="button" id={index} value="true" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
+            <input className="listBit" type="button" id={index} value="false" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
+            <span className="listBit">{item.confidence}% </span>
+            <span className="score">{item.eval === "true" ? <span className="greenish">{item.eval}</span> : 
+            item.eval === "false" ? <span className="redish">{item.eval}</span> :
+            <span className="blueish">{item.eval}</span>}</span>
+            <span className="listBit">{item.claim}</span>
             </div>}))
     }
 };

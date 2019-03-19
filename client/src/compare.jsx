@@ -25,7 +25,7 @@ class Compare extends React.Component {
                 }
             }
         });
-        return(<span><div>confidence: {this.props.confidence}%</div><div>observed: {Math.floor((yup/total)*100)}%</div></span>)
+        return(<span className="compare"><div>{this.props.confidence}%</div><br/><div>{Math.floor((yup/total)*100) ? Math.floor((yup/total)*100)+"%" : "_"}</div></span>)
     }
 };
 

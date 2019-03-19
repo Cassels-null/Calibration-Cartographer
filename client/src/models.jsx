@@ -4,8 +4,8 @@ var models = {
     send: function(prediction){
         axios.post("http://127.0.0.1:1337/make",
         {
-            tag: 1,
-            claim: "words",
+            tag: (prediction.tag || null),
+            claim: (prediction.claim || "I will eat food today"),
             confidence: 70,
             eval: "pending"
         })

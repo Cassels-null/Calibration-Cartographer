@@ -30,8 +30,22 @@ class App extends React.Component {
     render(){
         return(<div>
             <button onClick={()=>{models.send()}}>this is stuff</button>
+            <br/>
+            <input type="text" onClick={(e)=>{if(e.target.value.length > 3){
+                models.send({claim: e.target.value, tag: this.state.predictions.length})
+                console.log(e.target.value);
+                console.log(this.state.predictions.length);
+            }}}></input>
             <List predictions={this.state.predictions}/>
+            <Compare  predictions={this.state.predictions} confidence={10}/>
+            <Compare  predictions={this.state.predictions} confidence={20}/>
+            <Compare  predictions={this.state.predictions} confidence={30}/>
+            <Compare  predictions={this.state.predictions} confidence={40}/>
+            <Compare  predictions={this.state.predictions} confidence={50}/>
+            <Compare  predictions={this.state.predictions} confidence={60}/>
             <Compare  predictions={this.state.predictions} confidence={70}/>
+            <Compare  predictions={this.state.predictions} confidence={80}/>
+            <Compare  predictions={this.state.predictions} confidence={90}/>
         </div>)
     }
 };
