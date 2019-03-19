@@ -24,7 +24,7 @@ class App extends React.Component {
         axios.get("http://127.0.0.1:1337/read")
         .then((result)=>{this.setState({predictions : result.data})})
         .catch((err)=>{console.log(err)});
-        setTimeout(()=>{this.update()},1000);
+        setTimeout(()=>{this.update()},200);
     }
 
     render(){

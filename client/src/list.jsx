@@ -17,11 +17,11 @@ class List extends React.Component {
 
     render(){
         // return (<div>{this.props.predictions}</div>)
-        return(this.props.predictions.map((item)=>{return <div>
-            <span>{item.claim}....{item.confidence}....{item.eval}</span>
+        return(this.props.predictions.map((item, index)=>{return <div>
+            <span>{item.claim}____{item.confidence}____{item.eval}</span>
 
-            <input type="button" id="2" value="true" onClick={(e)=>{window.alert(e.target.id)}}></input>
-            <input type="button" tag={2} value="false" onClick={(e)=>{window.alert(e.target.value)}}></input>
+            <input type="button" id={index} value="true" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
+            <input type="button" id={index} value="false" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
             </div>}))
     }
 };

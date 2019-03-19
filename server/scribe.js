@@ -27,7 +27,7 @@ var scribe = {
         });
     },
     score: function(req, res){
-
+        console.log("score attempted");
         Prediction.findOneAndUpdate({tag: req.body.tag}, {eval: req.body.eval}, (err, result)=>{res.end();})
     },
     read: function(req,res){
