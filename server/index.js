@@ -24,4 +24,4 @@ app.get('/read', scribe.read);
 
 app.post('/make', scribe.record);
 
-app.post('/score', scribe.record);
+app.post('/score', scribe.score);
