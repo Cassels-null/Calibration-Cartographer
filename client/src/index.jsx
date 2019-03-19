@@ -29,13 +29,14 @@ class App extends React.Component {
 
     render(){
         return(<div>
-            <button onClick={()=>{models.send()}}>this is stuff</button>
+            {/* <button onClick={()=>{models.send()}}>this is stuff</button> */}
             <br/>
             <input type="text" onClick={(e)=>{if(e.target.value.length > 3){
                 models.send({claim: e.target.value, tag: this.state.predictions.length})
                 console.log(e.target.value);
                 console.log(this.state.predictions.length);
             }}}></input>
+            <input id="guess" type="number" min="10" max="90" step="10"></input>
             <List predictions={this.state.predictions}/>
             <Compare  predictions={this.state.predictions} confidence={10}/>
             <Compare  predictions={this.state.predictions} confidence={20}/>

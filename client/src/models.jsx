@@ -6,7 +6,7 @@ var models = {
         {
             tag: (prediction.tag || null),
             claim: (prediction.claim || "I will eat food today"),
-            confidence: 70,
+            confidence: (document.getElementById("guess").value || 70),
             eval: "pending"
         })
     },
