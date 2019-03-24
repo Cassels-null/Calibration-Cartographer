@@ -5,29 +5,70 @@
     height: 55px;
 }
 
+#words {
+    /* width: 900px; */
+    border-style: solid;
+    border-width: 1px;
+}
+
+.item {
+    width: 800px;
+    /* width: 80%; */
+    border-style: solid;
+    border-width: 1px;
+}
+
+.list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.eval {
+    display: inline-block;
+    /* width: 600px; */
+    /* border-style: solid;
+    border-width: 1px; */
+    /* border-color: blueviolet; */
+    /* padding: 3px; */
+    margin-top: 0px;
+}
+
 .listBit {
     border-style: solid;
     border-width: 1px;
-    padding: 3px;
+    /* padding: 3px; */
     margin-top: 0px;
 }
+
 
 .score{
     border-style: solid;
     border-width: 1px;
-    padding: 3px;
+    /* padding: 3px;
     margin-top: 0px;
-    /* width: 50%; */
+    width: 50%; */
 }
 
+
 .redish {
-    color: red;
+    display: inline-block;
+    width: 65px;
+    color: darkred;
+    background-color: palevioletred;
 }
 
 .greenish {
-    color: green;
+    display: inline-block;
+    width: 65px;
+    color: darkgreen;
+    background-color: palegreen;
 }
 
 .blueish {
+    display: inline-block;
+    width: 65px;
     color: blue;
+    background-color: paleturquoise;
 }
