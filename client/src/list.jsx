@@ -16,6 +16,7 @@ class List extends React.Component {
     }
 
     render(){
+        this.props.predictions.sort((a, b)=>{if(a.eval === "pending") return -1; if(a.eval === "false") return 1; if(a.eval === "true" && b.eval === "pending") return 1;})
         // return (<div>{this.props.predictions}</div>)
         return(<div className="list">{
         (this.props.predictions.map((item, index)=>{return <div className="item">
