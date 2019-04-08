@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import models from './models.jsx';
+import Compare from './compare.jsx';
+import Graph from './graph.jsx';
 
 
 class List extends React.Component {
@@ -28,6 +30,12 @@ class List extends React.Component {
             <span className="blueish">{item.eval}</span>}</span>
             <span className="eval">{item.claim}</span>
             </div>}))}
+            {/* <Graph predictions={this.props.predictions} intervals={this.props.intervals}/> */}
+            <div id="statsRatio">
+                {this.props.intervals.map((confidence)=>{
+                    return <Compare  predictions={this.props.predictions} confidence={confidence}/>
+                })}
+            </div>
         </div>)
     }
 };

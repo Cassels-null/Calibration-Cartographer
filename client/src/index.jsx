@@ -5,6 +5,7 @@ import axios from 'axios';
 import models from './models.jsx';
 import List from './list.jsx';
 import Compare from './compare.jsx';
+import Graph from './graph.jsx';
 
 
 class App extends React.Component {
@@ -36,11 +37,13 @@ class App extends React.Component {
             <input id="guess" type="number" min="10" max="90" step="10"></input>
             <button onClick={()=>{models.send({claim: document.getElementById("input").value, tag: this.state.predictions.length})}}>Submit</button>
             {/* display predictions */}
-            <List predictions={this.state.predictions}/>
+            <List predictions={this.state.predictions} intervals={this.state.intervals}/>
             {/* display statistics */}
-            {this.state.intervals.map((confidence)=>{
+            {/* {this.state.intervals.map((confidence)=>{
                 return <Compare  predictions={this.state.predictions} confidence={confidence}/>
-            })}
+            })} */}
+            <br/>
+            {/* <Graph intervals={this.state.intervals} predictions={this.state.predictions}/> */}
         </div>)
     }
 };
