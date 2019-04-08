@@ -6,7 +6,7 @@ var models = {
         {
             tag: (prediction.tag || null),
             claim: (prediction.claim || "I will eat food today"),
-            confidence: (document.getElementById("guess").value || 70),
+            confidence: (document.getElementById("guess").value || 90),
             eval: "pending"
         })
     },
@@ -16,7 +16,6 @@ var models = {
             tag: tag,
             eval: score
         })
-        console.log("score attempted");
     },
     update: function(prediction){
         axios.get("http://127.0.0.1:1337/make")
