@@ -11,7 +11,8 @@ class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            predictions: []
+            predictions: [],
+            intervals: [10, 20, 30, 40, 50, 60, 70, 80, 90]
         };
         this.update = this.update.bind(this);
     }
@@ -29,21 +30,17 @@ class App extends React.Component {
 
     render(){
         return(<div>
-            {/* <button onClick={()=>{models.send()}}>this is stuff</button> */}
             <br/>
+            {/* input fields */}
             <input id="input" type="text"></input>
             <input id="guess" type="number" min="10" max="90" step="10"></input>
             <button onClick={()=>{models.send({claim: document.getElementById("input").value, tag: this.state.predictions.length})}}>Submit</button>
+            {/* display predictions */}
             <List predictions={this.state.predictions}/>
-            <Compare  predictions={this.state.predictions} confidence={10}/>
-            <Compare  predictions={this.state.predictions} confidence={20}/>
-            <Compare  predictions={this.state.predictions} confidence={30}/>
-            <Compare  predictions={this.state.predictions} confidence={40}/>
-            <Compare  predictions={this.state.predictions} confidence={50}/>
-            <Compare  predictions={this.state.predictions} confidence={60}/>
-            <Compare  predictions={this.state.predictions} confidence={70}/>
-            <Compare  predictions={this.state.predictions} confidence={80}/>
-            <Compare  predictions={this.state.predictions} confidence={90}/>
+            {/* display statistics */}
+            {this.state.intervals.map((confidence)=>{
+                return <Compare  predictions={this.state.predictions} confidence={confidence}/>
+            })}
         </div>)
     }
 };
