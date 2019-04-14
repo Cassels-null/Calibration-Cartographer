@@ -30,20 +30,19 @@ class App extends React.Component {
     }
 
     render(){
-        return(<div>
+        return(<div id="master">
             <br/>
             {/* input fields */}
             <input id="input" type="text"></input>
             <input id="guess" type="number" min="10" max="90" step="10"></input>
             <button onClick={()=>{models.send({claim: document.getElementById("input").value, tag: this.state.predictions.length})}}>Submit</button>
+            <Graph intervals={this.state.intervals} predictions={this.state.predictions}/>
             {/* display predictions */}
             <List predictions={this.state.predictions} intervals={this.state.intervals}/>
             {/* display statistics */}
             {/* {this.state.intervals.map((confidence)=>{
                 return <Compare  predictions={this.state.predictions} confidence={confidence}/>
             })} */}
-            <br/>
-            {/* <Graph intervals={this.state.intervals} predictions={this.state.predictions}/> */}
         </div>)
     }
 };

@@ -19,7 +19,7 @@ class List extends React.Component {
             if(a.eval === "false") return 1; 
             if(a.eval === "true" && b.eval === "pending")
             return 1;})
-        return(<div className="list">{
+        return(<span className="list">{
         (this.props.predictions.map((item, index)=>{return <div className="item">
             
             <input className="listBit" type="button" id={item.tag} value="true" onClick={(e)=>{models.score(e.target.id, e.target.value)}}></input>
@@ -36,7 +36,7 @@ class List extends React.Component {
                     return <Compare  predictions={this.props.predictions} confidence={confidence}/>
                 })}
             </div>
-        </div>)
+        </span>)
     }
 };
 
